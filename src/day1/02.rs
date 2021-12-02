@@ -18,12 +18,14 @@ fn main() {
 	let input = read_lines("./src/day1/01.in");
 	let mut segmentSums: Vec<i32> = Vec::new();
 	for i in 0..input.len() {
-		if i > 2 {
+		if i >= 2 {
+			println!("{:?}", [&input[i-2], &input[i-1], &input[i]]);
 			let pastThree = sum([&input[i-2], &input[i-1], &input[i]]);
 			segmentSums.push(pastThree);
 		}
 	}
 	//TODO: finish this
+	println!("{:?}", segmentSums);
 	let mut greaterThan = 0;
 	for i in 0..segmentSums.len() {
 		if i != 0 {
